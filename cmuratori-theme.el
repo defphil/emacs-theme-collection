@@ -1,9 +1,9 @@
-;;; aftereight-theme.el --- Aftereight theme for Emacs.
+;;; cmuratori-theme.el --- Cmuratori theme for Emacs.
 
 ;; Copyright (C) 2019-2019 Stephen Dickinson
 
 ;; Author: Stephen Dickinson <stephencottontail@me.com>
-;; URL: https://github.com/stephencottontail/aftereight-theme.git
+;; URL: https://github.com/stephencottontail/cmuratori-theme.git
 ;; Version: 0.0.1
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -21,39 +21,37 @@
 
 ;;; Code:
 
-(deftheme aftereight
-  "Aftereight theme for Emacs.")
+(deftheme cmuratori
+  "Cmuratori theme for Emacs.")
 
 (let* ((class '((class color) (min-colors 89)))
 
-       (fg         "#c2b9a0") ;;b6a997 <> d5c4a1 <> D2B58D
-       (bg         "#121416")
+       (fg         "#B6A997") ;;b6a997 <> d5c4a1 <> D2B58D
+       (bg         "#101010")
        (strings    "#44b9b1")
        (constants  "#a060c0")
-       (type       "#c090ff")
-       (builtins   "#FFF2c9")
-       (keywords   "ivory1")
-       (comments   "#37df4D") ;;30f035
-       (hl         "#abf")
-       )
+       (type       "#c090c0")
+       (comments   "#6faeb0") ;;30f035
+       (hl         "#afbfff"))
 
   (custom-theme-set-faces
-   'aftereight
+   'cmuratori
 
-   `(default ((,class (:background ,bg :foreground ,fg))))
+   `(default ((,class (:background ,bg :foreground "burlywood3"))))
 
    ;; global font lock
-   `(font-lock-keyword-face       ((,class (:foreground ,keywords))))
-;;   `(font-lock-constant-face      ((,class (:foreground ,constants))))
-;;   `(font-lock-type-face          ((,class (:foreground ,type))))
-   `(font-lock-builtin-face       ((,class (:foreground ,builtins))))
-   `(font-lock-string-face        ((,class (:foreground ,strings))))
+   `(fringe ((,class (:background "#111111" :foreground "burlywood3"))))
+   `(font-lock-keyword-face       ((,class (:foreground "DarkGoldenrod3"))))
+   `(font-lock-constant-face      ((,class (:foreground "olive drab"))))
+   `(font-lock-type-face          ((,class (:foreground "burlywood3"))))
+   `(font-lock-builtin-face       ((,class (:foreground "#DAB98F"))))
+   `(font-lock-string-face        ((,class (:foreground "olive drab"))))
    `(font-lock-doc-face           ((,class (:foreground ,comments))))
    `(font-lock-comment-face       ((,class (:foreground ,comments))))
-   `(highlight-numbers-number     ((,class (:foreground ,type))))
-   `(font-lock-function-name-face ((,class (:foreground "white"))))
-   `(font-lock-variable-name-face ((,class (:foreground "seashell2"))))
-   `(cursor ((,class (:foreground "#000" :background "#ff0060"))))
+   `(highlight-numbers-number     ((,class (:foreground "LightSteelBlue"))))
+   `(font-lock-function-name-face ((,class (:foreground "seashell2"))))
+   `(font-lock-variable-name-face ((,class (:foreground "burlywood3"))))
+   `(cursor ((,class (:foreground "#000" :background "#ff0080"))))
    ;; Magit
    `(magit-diff-context           ((,class (:foreground ,fg))))
    `(magit-diff-context-highlight ((,class (:foreground ,fg))))
@@ -79,7 +77,7 @@
    ;; hl-line
    `(hl-line                      ((,class (:background ,hl))))))
 
-(provide-theme 'aftereight)
+(provide-theme 'cmuratori)
 
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path)
@@ -88,4 +86,4 @@
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))
 
-;;; aftereight-theme.el ends here
+;;; cmuratori-theme.el ends here

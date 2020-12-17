@@ -1,9 +1,9 @@
-;;; aftereight-theme.el --- Aftereight theme for Emacs.
+;;; hhteal-theme.el --- Happy Hacking Teal theme for Emacs.
 
 ;; Copyright (C) 2019-2019 Stephen Dickinson
 
-;; Author: Stephen Dickinson <stephencottontail@me.com>
-;; URL: https://github.com/stephencottontail/aftereight-theme.git
+;; Author: Filip Miletic <filip.miletic@me.com>
+;; URL: https://github.com/stephencottontail/hhteal-theme.git
 ;; Version: 0.0.1
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -19,44 +19,46 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+;;; Commentary:
+;; Port of legendary vim theme.
+;; Minimal config.
+
 ;;; Code:
 
-(deftheme aftereight
-  "Aftereight theme for Emacs.")
+(deftheme hhteal
+  "Hhteal theme for Emacs.")
 
 (let* ((class '((class color) (min-colors 89)))
 
-       (fg         "#c2b9a0") ;;b6a997 <> d5c4a1 <> D2B58D
-       (bg         "#121416")
-       (strings    "#44b9b1")
+       (fg         "#88bb88") ;;b6a997 <> d5c4a1 <> D2B58D
+       (bg         "#031111")
+       (strings    "#2d9574")
        (constants  "#a060c0")
-       (type       "#c090ff")
-       (builtins   "#FFF2c9")
-       (keywords   "ivory1")
-       (comments   "#37df4D") ;;30f035
-       (hl         "#abf")
-       )
+       (type       "#22cc66")
+       (keyword    "burlywood3")
+       (comments   "#2aa1ae") ;;30f035
+       (hl         "#afbfff"))
 
   (custom-theme-set-faces
-   'aftereight
+   'hhteal
 
    `(default ((,class (:background ,bg :foreground ,fg))))
 
    ;; global font lock
-   `(font-lock-keyword-face       ((,class (:foreground ,keywords))))
-;;   `(font-lock-constant-face      ((,class (:foreground ,constants))))
-;;   `(font-lock-type-face          ((,class (:foreground ,type))))
-   `(font-lock-builtin-face       ((,class (:foreground ,builtins))))
+   `(fringe ((,class (:background "#031618" :foreground "burlywood3"))))
+   `(font-lock-keyword-face       ((,class (:foreground ,keyword))))
+   `(font-lock-constant-face      ((,class (:foreground "cyan3"))))
+   `(font-lock-type-face          ((,class (:foreground "cyan2"))))
+   `(font-lock-builtin-face       ((,class (:foreground "gray40"))))
    `(font-lock-string-face        ((,class (:foreground ,strings))))
-   `(font-lock-doc-face           ((,class (:foreground ,comments))))
-   `(font-lock-comment-face       ((,class (:foreground ,comments))))
-   `(highlight-numbers-number     ((,class (:foreground ,type))))
-   `(font-lock-function-name-face ((,class (:foreground "white"))))
-   `(font-lock-variable-name-face ((,class (:foreground "seashell2"))))
-   `(cursor ((,class (:foreground "#000" :background "#ff0060"))))
+   `(font-lock-doc-face           ((,class (:foreground ,type))))
+   `(font-lock-comment-face       ((,class (:foreground ,type))))
+   `(font-lock-function-name-face ((,class (:foreground "gray100"))))
+   `(font-lock-variable-name-face ((,class (:foreground ,fg))))
+   `(cursor ((,class (:foreground "#000" :background "#ff0090"))))
    ;; Magit
    `(magit-diff-context           ((,class (:foreground ,fg))))
-   `(magit-diff-context-highlight ((,class (:foreground ,fg))))
+   `(magit-diff-context-highlight ((,class (:foreground ,strings))))
    '(vertical-border ((t (:background "#000" :foreground "#000"))))
    ;; org
    `(org-verbatim                 ((,class (:foreground ,constants))))
@@ -65,8 +67,8 @@
    `(clojure-keyword-face         ((,class (:background "gray90"))))
 
    ;; mode line
-   `(mode-line                    ((,class (:inherit default :foreground "ivory3" :background "#222222"))))
-   `(mode-line-inactive           ((,class (:underline nil :foreground "#555"))))
+   `(mode-line                    ((,class (:inherit default :foreground ,keyword :background "#032628"))))
+   `(mode-line-inactive           ((,class (:background "#031616" :foreground "#666"))))
    '(dired-directory ((t (:foreground "LightSkyBlue"))))
    '(dired-flagged ((t (:weight bold :foreground "Pink"))))
    '(dired-header ((t (:foreground "PaleGreen"))))
@@ -79,7 +81,7 @@
    ;; hl-line
    `(hl-line                      ((,class (:background ,hl))))))
 
-(provide-theme 'aftereight)
+(provide-theme 'hhteal)
 
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path)
@@ -88,4 +90,4 @@
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))
 
-;;; aftereight-theme.el ends here
+;;; hhteal-theme.el ends here
