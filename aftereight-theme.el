@@ -27,8 +27,8 @@
 (let* ((class '((class color) (min-colors 89)))
 
        (fg         "#c2b9a0") ;;b6a997 <> d5c4a1 <> D2B58D
-       (bg         "#121416")
-       (strings    "#44b9b1")
+       (bg         "#031418")
+       (strings    "#62d0c8")
        (constants  "#a060c0")
        (type       "#c090ff")
        (builtins   "#FFF2c9")

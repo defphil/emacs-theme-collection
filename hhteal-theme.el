@@ -30,11 +30,11 @@
 
 (let* ((class '((class color) (min-colors 89)))
 
-       (fg         "#88bb88") ;;b6a997 <> d5c4a1 <> D2B58D
-       (bg         "#031111")
-       (strings    "#2d9574")
+       (fg         "#a4bbaa") ;; 88bb88
+       (bg         "#081618") ;; 031616
+       (strings    "#2d9594")
        (constants  "#a060c0")
-       (type       "#22cc66")
+       (type       "#32f020")
        (keyword    "burlywood3")
        (comments   "#2aa1ae") ;;30f035
        (hl         "#afbfff"))
@@ -45,7 +45,7 @@
    `(default ((,class (:background ,bg :foreground ,fg))))
 
    ;; global font lock
-   `(fringe ((,class (:background "#031618" :foreground "burlywood3"))))
+   `(fringe ((,class (:background "#001111" :foreground "burlywood3"))))
    `(font-lock-keyword-face       ((,class (:foreground ,keyword))))
    `(font-lock-constant-face      ((,class (:foreground "cyan3"))))
    `(font-lock-type-face          ((,class (:foreground "cyan2"))))
@@ -68,7 +68,7 @@
 
    ;; mode line
    `(mode-line                    ((,class (:inherit default :foreground ,keyword :background "#032628"))))
-   `(mode-line-inactive           ((,class (:background "#031616" :foreground "#666"))))
+   `(mode-line-inactive           ((,class (:background "#001111" :foreground "#666"))))
    '(dired-directory ((t (:foreground "LightSkyBlue"))))
    '(dired-flagged ((t (:weight bold :foreground "Pink"))))
    '(dired-header ((t (:foreground "PaleGreen"))))
